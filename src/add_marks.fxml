@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PrimaryController">
+   <children>
+      <Label alignment="TOP_CENTER" layoutX="132.0" layoutY="47.0" text="Add Student Marks" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Bold" size="35.0" />
+         </font>
+      </Label>
+      <TextField fx:id="marks" layoutX="142.0" layoutY="275.0" />
+      <Label layoutX="142.0" layoutY="180.0" text="Select Roll">
+         <font>
+            <Font name="Calisto MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="142.0" layoutY="247.0" text="Marks">
+         <font>
+            <Font name="Calisto MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="add" layoutX="145.0" layoutY="324.0" mnemonicParsing="false" onAction="#Submit" text="Submit">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Button>
+      <MenuBar fx:id="myMenuBar" prefHeight="26.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#switchToHome" text="Home" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToAddMark" text="Add Marks" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToResult" text="Result" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="145.0" layoutY="112.0" text="Select CT">
+         <font>
+            <Font name="Calisto MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="ct_type" layoutX="145.0" layoutY="140.0" prefWidth="150.0" promptText="Select CT" />
+      <ComboBox fx:id="select_roll" layoutX="145.0" layoutY="208.0" prefWidth="150.0" promptText="Select Roll" />
+   </children>
+</AnchorPane>
