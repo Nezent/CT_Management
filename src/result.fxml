@@ -22,7 +22,7 @@
             <TableColumn fx:id="average" prefWidth="98.39993286132812" text="Average" />
         </columns>
       </TableView>
-      <Label layoutX="264.0" layoutY="35.0" text="Result">
+      <Label fx:id="label" layoutX="264.0" layoutY="35.0" text="Result">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>

@@ -21,7 +21,7 @@
                </items></Menu>
         </menus>
       </MenuBar>
-      <Text layoutX="300.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO ECE CT MARKS MANAGEMENT SYSTEM" wrappingWidth="230.1649932861328">
+      <Text fx:id="title" layoutX="300.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO ECE CT MARKS MANAGEMENT SYSTEM" wrappingWidth="230.1649932861328">
          <font>
             <Font name="Century Schoolbook Bold" size="26.0" />
          </font>
