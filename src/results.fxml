@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -46,11 +48,26 @@
       </VBox>
       <AnchorPane prefHeight="400.0" prefWidth="402.0" style="-fx-background-color: #D3CCE3;">
          <children>
-            <Text fontSmoothingType="LCD" layoutX="79.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to ECE Department" textAlignment="CENTER" wrappingWidth="241.76205444335938">
+            <Text fontSmoothingType="LCD" layoutX="80.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result Table" textAlignment="CENTER" wrappingWidth="241.76205444335938">
                <font>
-                  <Font name="Californian FB Bold" size="43.0" />
+                  <Font name="Californian FB Bold" size="30.0" />
                </font>
             </Text>
+            <Button fx:id="load" layoutX="334.0" layoutY="344.0" mnemonicParsing="false" onAction="#Load" style="-fx-background-color: #0082c8;" text="Load" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </Button>
+            <TableView fx:id="table" layoutX="5.0" layoutY="65.0" prefHeight="271.0" prefWidth="387.0" style="-fx-background-color: transparent; -fx-border-color: black;">
+              <columns>
+                <TableColumn fx:id="rollz" prefWidth="80" text="Roll" />
+                <TableColumn fx:id="ct1" prefWidth="59" text="CT_1" />
+                  <TableColumn fx:id="ct2" prefWidth="59" text="CT_2" />
+                  <TableColumn fx:id="ct3" prefWidth="59" text="CT_3" />
+                  <TableColumn fx:id="ct4" prefWidth="59" text="CT_4" />
+                  <TableColumn fx:id="average" prefWidth="70" text="Average" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </children>

@@ -16,18 +16,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.MenuBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class PrimaryController implements Initializable{
     DB db = new DB();
-    @FXML MenuBar myMenuBar;
+    @FXML AnchorPane myMenuBar;
     @FXML
     ImageView myImageView;
     Image myImage = new Image(getClass().getResourceAsStream("ruet.png"));
@@ -139,7 +139,7 @@ public class PrimaryController implements Initializable{
     }
 
     public void switchToAddMark(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("add_marks.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("add_mark.fxml"));
         stage = (Stage) myMenuBar.getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
@@ -159,7 +159,7 @@ public class PrimaryController implements Initializable{
         stage.show();
     }
     public void switchToResult(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("result.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("results.fxml"));
         stage = (Stage) myMenuBar.getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
