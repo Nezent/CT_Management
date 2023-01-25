@@ -1,11 +1,23 @@
 
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -72,7 +84,8 @@ public class PrimaryController implements Initializable{
     ObservableList<marks> list = FXCollections.observableArrayList();
     @FXML
     private Button login;
-
+    @FXML
+    ObservableList<marks> list2 = FXCollections.observableArrayList();
     @FXML
     private PasswordField password;
 
@@ -151,6 +164,55 @@ public class PrimaryController implements Initializable{
         }
               
         
+    }
+    @FXML
+    void Export(ActionEvent event) throws IOException, DocumentException, SQLException{
+        String path = "C:\\Users\\siraj\\Desktop\\Result.pdf";
+        Document document = new Document();
+        PdfWriter.getInstance(document, new FileOutputStream(path));
+        document.open();
+        Paragraph heading = new Paragraph("Department of ECE,RUET");
+        heading.setAlignment(Element.ALIGN_CENTER);
+        heading.setSpacingAfter(30f);
+        document.add(heading);
+        PdfPTable table = new PdfPTable(6);
+        table.getDefaultCell().setPadding(4);
+        PdfPCell c1 = new PdfPCell(new Phrase("Roll", FontFactory.getFont(FontFactory.HELVETICA, 11, Font.BOLD)));
+        c1.setPadding(4);
+        table.addCell(c1);
+        c1 = new PdfPCell(new Phrase("CT_1", FontFactory.getFont(FontFactory.HELVETICA, 11, Font.BOLD)));
+        c1.setPadding(4);
+        table.addCell(c1);
+        c1 = new PdfPCell(new Phrase("CT_2", FontFactory.getFont(FontFactory.HELVETICA, 11, Font.BOLD)));
+        c1.setPadding(4);
+        table.addCell(c1);
+        c1 = new PdfPCell(new Phrase("CT_3", FontFactory.getFont(FontFactory.HELVETICA, 11, Font.BOLD)));
+        c1.setPadding(4);
+        table.addCell(c1);
+        c1 = new PdfPCell(new Phrase("CT_4", FontFactory.getFont(FontFactory.HELVETICA, 11, Font.BOLD)));
+        c1.setPadding(4);
+        table.addCell(c1);
+        c1 = new PdfPCell(new Phrase("Average", FontFactory.getFont(FontFactory.HELVETICA, 11, Font.BOLD)));
+        c1.setPadding(4);
+        table.addCell(c1);
+        table.setHeaderRows(1);
+        pst = db.conn.prepareStatement("SELECT * FROM `result`");
+        ResultSet resultSet = pst.executeQuery();
+        while(resultSet.next()){
+            list2.add(new marks(resultSet.getInt("Roll"), resultSet.getInt("CT_1"), resultSet.getInt("CT_2"), resultSet.getInt("CT_3"), resultSet.getInt("CT_4")));
+        }
+        for(int i = 0; i < list2.size(); ++i){
+            table.addCell(Integer.toString(list2.get(i).getRoll()));
+            table.addCell(Integer.toString(list2.get(i).getCt1()));
+            table.addCell(Integer.toString(list2.get(i).getCt2()));
+            table.addCell(Integer.toString(list2.get(i).getCt3()));
+            table.addCell(Integer.toString(list2.get(i).getCt4()));
+            table.addCell(Integer.toString(list2.get(i).getSum()));
+        }
+        document.add(table);
+        document.close();
+        System.out.println("Finished generating the pdf");
+        list2.clear();
     }
 
     @FXML

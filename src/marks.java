@@ -1,5 +1,6 @@
 import java.lang.Math;
 
+
 public class marks {
     Integer roll,ct1,ct2,ct3,ct4,sum = 0;
     public marks(Integer roll,Integer ct1,Integer ct2,Integer ct3,Integer ct4){
