@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -42,6 +43,8 @@ public class PrimaryController implements Initializable{
     @FXML
     private Button add;
     @FXML
+    private Button logout;
+    @FXML
     private TextField marks;
     PreparedStatement pst;
     @FXML
@@ -67,6 +70,14 @@ public class PrimaryController implements Initializable{
     private Button load;
     @FXML
     ObservableList<marks> list = FXCollections.observableArrayList();
+    @FXML
+    private Button login;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private TextField username;
     @FXML
     void Submit(ActionEvent event) throws SQLException {
         String ct = ct_type.getValue();
@@ -111,6 +122,10 @@ public class PrimaryController implements Initializable{
         }
     }
     @FXML
+    void LogOut(ActionEvent event) throws IOException{
+        switchToLogIn(event);
+    }
+    @FXML
     void Load(ActionEvent event){
         table.getItems().clear();
         try{
@@ -138,6 +153,33 @@ public class PrimaryController implements Initializable{
         
     }
 
+    @FXML
+    void LogIn(ActionEvent event) throws SQLException, IOException {
+        String uname = username.getText();
+        String pass = password.getText();
+        pst = db.conn.prepareStatement("SELECT * FROM `admin` WHERE `username` = ? AND `password` = ?");
+        pst.setString(1, uname);
+        pst.setString(2, pass);
+        ResultSet resultSet = pst.executeQuery();
+        if(resultSet.next()){
+            switchToHome(event);
+        }
+        else{
+            System.out.println("Login Failed");
+            username.setText("");
+            password.setText("");
+        }
+    }
+    public void switchToLogIn(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        stage = (Stage) myMenuBar.getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        Image icon = new Image("ruet.png");
+        stage.getIcons().add(icon);
+        stage.setScene(scene);
+        stage.show();
+    }
     public void switchToAddMark(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("add_mark.fxml"));
         stage = (Stage) myMenuBar.getScene().getWindow();

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2023 at 05:51 PM
+-- Generation Time: Jan 25, 2023 at 06:41 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `ece_result2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'anon', 'test123');
 
 -- --------------------------------------------------------
 
@@ -41,6 +60,9 @@ CREATE TABLE `result` (
 
 INSERT INTO `result` (`Roll`, `CT_1`, `CT_2`, `CT_3`, `CT_4`) VALUES
 (1, 20, 10, 18, 20),
+(6, NULL, 20, NULL, NULL),
+(9, 10, 9, 16, 18),
+(13, NULL, NULL, NULL, 14),
 (20, NULL, 10, NULL, 18),
 (38, 20, 18, 19, 16),
 (57, 20, 20, 20, 20);
@@ -48,6 +70,12 @@ INSERT INTO `result` (`Roll`, `CT_1`, `CT_2`, `CT_3`, `CT_4`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `result`
@@ -58,6 +86,12 @@ ALTER TABLE `result`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `result`
