@@ -94,8 +94,14 @@ public class PrimaryController implements Initializable{
     @FXML
     void Submit(ActionEvent event) throws SQLException {
         String ct = ct_type.getValue();
-        Integer roll = Integer.parseInt(select_roll.getValue());
+        Integer roll;
         Integer mark = Integer.parseInt(marks.getText());
+        if(select_roll.getValue() == "19-22"){
+            roll = 1910022;
+        }
+        else{
+            roll = Integer.parseInt(select_roll.getValue());
+        }
         // pst = db.conn.prepareStatement("INSERT INTO `result`(`Roll`,`CT_1`,`CT_2`,`CT_3`,`CT_4`)VALUES(?,?,?,?,?)ON DUPLICATE KEY UPDATE `CT_1` = VALUES(?)");
         // pst.setInt(1, roll);
         // pst.setInt(2, ct);

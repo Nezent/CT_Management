@@ -1,10 +1,13 @@
-import java.lang.Math;
-
-
 public class marks {
     Integer roll,ct1,ct2,ct3,ct4,sum = 0;
     public marks(Integer roll,Integer ct1,Integer ct2,Integer ct3,Integer ct4){
-        Integer full_roll = 2010000 + roll;
+        Integer full_roll;
+        if(roll == 1910022){
+            full_roll = 1910022;
+        }
+        else{
+            full_roll = 2010000 + roll;
+        }
         this.roll = full_roll;
         this.ct1 = ct1;
         this.ct2 = ct2;
@@ -53,6 +56,13 @@ public class marks {
             }
         }
         sum = marks[0] + marks[1] + marks[2];
-        return Math.floorDiv(sum, 3);
+        Double temp = ((sum*1.0)/3);
+        Integer k = sum/3;
+        if(temp > (float)k){
+            return k+1;
+        }
+        else{
+            return k;
+        }
     }
 }
