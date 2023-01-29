@@ -95,7 +95,13 @@ public class PrimaryController implements Initializable{
     void Submit(ActionEvent event) throws SQLException {
         String ct = ct_type.getValue();
         Integer roll;
-        Integer mark = Integer.parseInt(marks.getText());
+        Integer mark;
+        if(marks.getText().equals("a") || marks.getText().equals("A")){
+            mark = -1;
+        }
+        else{
+            mark = Integer.parseInt(marks.getText());
+        }
         if(select_roll.getValue() == "19-22"){
             roll = 1910022;
         }
@@ -209,10 +215,30 @@ public class PrimaryController implements Initializable{
         }
         for(int i = 0; i < list2.size(); ++i){
             table.addCell(Integer.toString(list2.get(i).getRoll()));
-            table.addCell(Integer.toString(list2.get(i).getCt1()));
-            table.addCell(Integer.toString(list2.get(i).getCt2()));
-            table.addCell(Integer.toString(list2.get(i).getCt3()));
-            table.addCell(Integer.toString(list2.get(i).getCt4()));
+            if(list2.get(i).getCt1() < 0){
+                table.addCell("A");
+            }
+            else{
+                table.addCell(Integer.toString(list2.get(i).getCt1()));
+            }
+            if(list2.get(i).getCt2() < 0){
+                table.addCell("A");
+            }
+            else{
+                table.addCell(Integer.toString(list2.get(i).getCt2()));
+            }
+            if(list2.get(i).getCt3() < 0){
+                table.addCell("A");
+            }
+            else{
+                table.addCell(Integer.toString(list2.get(i).getCt3()));
+            }
+            if(list2.get(i).getCt4() < 0){
+                table.addCell("A");
+            }
+            else{
+                table.addCell(Integer.toString(list2.get(i).getCt4()));
+            }
             table.addCell(Integer.toString(list2.get(i).getSum()));
         }
         document.add(table);

@@ -46,6 +46,11 @@ public class marks {
     }
     public Integer getSum(){
         Integer[] marks = {ct1,ct2,ct3,ct4};
+        for(int i = 0; i < 4; ++i){
+            if(marks[i] < 0){
+                marks[i] = 0;
+            }
+        }
         for(int i = 0; i < 4-1; ++i){
             for(int j = 0; j < 4-i-1; ++j){
                 if(marks[j] < marks[j+1]){
