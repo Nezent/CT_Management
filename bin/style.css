@@ -112,3 +112,8 @@
     -fx-background-radius:12;
     -fx-border-radius:12;
 }
+.table{
+    -fx-background-radius: 0 0 10 10;
+    -fx-border-radius: 0 0 10 10;
+    -fx-border-color: #000000;
+}

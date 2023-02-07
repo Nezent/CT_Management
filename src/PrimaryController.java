@@ -36,6 +36,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class PrimaryController implements Initializable{
@@ -51,7 +52,8 @@ public class PrimaryController implements Initializable{
     private ComboBox<String> ct_type = new ComboBox<>();
     @FXML
     private ComboBox<String> select_roll = new ComboBox<>();
-
+    @FXML
+    private Text counter = new Text();
     @FXML
     private Button add;
     @FXML
@@ -312,6 +314,16 @@ public class PrimaryController implements Initializable{
         stage.setResizable(false);
         stage.show();
     }
+    @FXML
+    public String Count() throws SQLException{
+        String count = "";
+        pst = db.conn.prepareStatement("SELECT COUNT(`Roll`) AS COUNTER FROM `result`");
+        ResultSet rs = pst.executeQuery();
+        if(rs.next()){
+            count = rs.getString("COUNTER");            
+        }
+        return count;
+    }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         String[] cts = {"CT_1","CT_2","CT_3","CT_4"};
@@ -319,5 +331,10 @@ public class PrimaryController implements Initializable{
         ct_type.getItems().addAll(cts);
         select_roll.getItems().addAll(rolls);  
         db.connect();   
+        try {
+            counter.setText(Count());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

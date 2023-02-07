@@ -81,7 +81,7 @@
          <children>
             <StackPane prefHeight="83.0" prefWidth="741.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Marks">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Result Tabulation">
                      <font>
                         <Font name="Agency FB Bold" size="45.0" />
                      </font>
@@ -90,7 +90,7 @@
             </StackPane>
             <AnchorPane prefHeight="493.0" prefWidth="741.0">
                <children>
-                  <TableView fx:id="table" layoutX="35.0" layoutY="21.0" prefHeight="347.0" prefWidth="670.0">
+                  <TableView fx:id="table" layoutX="35.0" layoutY="21.0" prefHeight="347.0" prefWidth="675.0" styleClass="table" stylesheets="@style.css">
                     <columns>
                       <TableColumn fx:id="rollz" prefWidth="115" text="Roll" />
                       <TableColumn fx:id="ct1" prefWidth="111" text="CT_1" />
