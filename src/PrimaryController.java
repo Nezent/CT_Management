@@ -271,7 +271,9 @@ public class PrimaryController implements Initializable{
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         Image icon = new Image("ruet.png");
         stage.getIcons().add(icon);
+        stage.setTitle("Department of ECE");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
     public void switchToAddMark(ActionEvent event) throws IOException{
@@ -281,7 +283,9 @@ public class PrimaryController implements Initializable{
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         Image icon = new Image("ruet.png");
         stage.getIcons().add(icon);
+        stage.setTitle("Department of ECE");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
     public void switchToHome(ActionEvent event) throws IOException{
@@ -291,7 +295,9 @@ public class PrimaryController implements Initializable{
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         Image icon = new Image("ruet.png");
         stage.getIcons().add(icon);
+        stage.setTitle("Department of ECE");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
     public void switchToResult(ActionEvent event) throws IOException{
@@ -302,6 +308,8 @@ public class PrimaryController implements Initializable{
         Image icon = new Image("ruet.png");
         stage.getIcons().add(icon);
         stage.setScene(scene);
+        stage.setTitle("Department of ECE");
+        stage.setResizable(false);
         stage.show();
     }
     @Override

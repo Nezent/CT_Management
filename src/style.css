@@ -1,0 +1,114 @@
+.left_pane{
+    -fx-background-color: #263238;
+}
+.top_pane{
+    -fx-background-color: #263238;
+}
+.logout_button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 30;
+
+}
+.left_button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #00E676;
+}
+.left_button:hover{
+    -fx-background-color: #e8f5e949;
+    -fx-background-radius:20;
+}
+.main_pane{
+    -fx-background-color: #E1F5FE;
+}
+.mark_pane{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0,1,1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+.submit_button{
+    -fx-background-color: #00E5FF;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: black;
+}
+.submit_button:hover{
+    -fx-background-color:#0278bd3a;
+    -fx-background-radius: 12;
+}
+.load_button{
+    -fx-background-color: #00B0FF;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: black;
+}
+.export_button{
+    -fx-background-color: #76FF03;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: black;
+}
+.load_button:hover{
+    -fx-background-color: #e1f5fe;
+    -fx-background-radius: 12;  
+}
+.export_button:hover{
+    -fx-background-color: #e8f5e9;
+    -fx-background-radius: 12;
+}
+.inside_pane_1{
+    -fx-background-color: #0091EA;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0,1,1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+.inside_pane_2{
+    -fx-background-color: #00BFA5;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0,1,1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+.inside_pane_3{
+    -fx-background-color: #FF6D00;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0,1,1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+.inside_pane_4{
+    -fx-background-color: #00C853;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0,1,1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+}
+.text_box{
+    -fx-border-radius: 5;
+    -fx-border-color: #6200EE;
+    -fx-background-color: #deeaf3;
+    -fx-margin: 2;
+    -fx-text-fill: rgb(45, 45, 45);
+    -fx-prompt-text-fill: #474747;
+}
+.choose_box{
+    -fx-border-radius: 5;
+    -fx-border-color: #6200EE;
+    -fx-background-color: #E0F2F1;
+    -fx-padding: 2;
+    -fx-prompt-text-fill: #474747;
+}
+.text_box:focused{
+    -fx-border-radius: 5;
+    -fx-border-color: #004D40;
+    -fx-border-style: dotted;
+}
+.login_button{
+    -fx-background-color: #00BFA5;
+    -fx-background-radius:12;
+    -fx-border-radius:12;
+}
+.login_button:hover{
+    -fx-background-color: #536DFE;
+    -fx-background-radius:12;
+    -fx-border-radius:12;
+}

@@ -7,65 +7,63 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PrimaryController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PrimaryController">
    <center>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="myMenuBar" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="400.0" prefWidth="277.0" style="-fx-background-color: #22c1c3; -fx-border-radius: black; -fx-border-style: solid;">
-               <children>
-                  <AnchorPane prefHeight="429.0" prefWidth="274.0">
-                     <children>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="74.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@ruet.png" />
-                           </image>
-                        </ImageView>
-                        <Text layoutX="31.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department of ECE">
-                           <font>
-                              <Font name="Calisto MT Bold" size="24.0" />
-                           </font>
-                        </Text>
-                        <Text layoutX="99.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUET">
-                           <font>
-                              <Font name="Calisto MT Bold" size="26.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
-            <AnchorPane fx:id="myMenuBar" prefHeight="400.0" prefWidth="325.0" style="-fx-background-color: #EAEAEA; -fx-border-radius: black; -fx-border-style: solid;">
-               <children>
-                  <Text layoutX="109.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In">
-                     <font>
-                        <Font name="Calisto MT Bold" size="36.0" />
-                     </font>
-                  </Text>
-                  <Text fontSmoothingType="LCD" layoutX="48.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
-                     <font>
-                        <Font name="Calisto MT Bold" size="18.0" />
-                     </font>
-                  </Text>
-                  <Text fontSmoothingType="LCD" layoutX="50.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
-                     <font>
-                        <Font name="Calisto MT Bold" size="18.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="username" layoutX="140.0" layoutY="118.0" />
-                  <Button fx:id="login" layoutX="229.0" layoutY="252.0" mnemonicParsing="false" onAction="#LogIn" style="-fx-background-color: #0082c8;" text="Login" textFill="WHITE">
-                     <font>
-                        <Font name="Calisto MT Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <PasswordField fx:id="password" layoutX="141.0" layoutY="171.0" />
-               </children>
-            </AnchorPane>
+            <Circle fill="#b2dfdb" layoutX="127.0" layoutY="381.0" radius="367.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Circle fill="#4db6ac" layoutX="83.0" layoutY="381.0" radius="367.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Circle fill="#00695c" layoutY="381.0" radius="367.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <ImageView fitHeight="346.0" fitWidth="406.0" layoutX="83.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@laptop.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="629.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ruet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="539.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@lock.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="username" layoutX="589.0" layoutY="381.0" prefHeight="26.0" prefWidth="238.0" promptText="Username" styleClass="text_box" stylesheets="@style.css">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="539.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="login" layoutX="696.0" layoutY="511.0" mnemonicParsing="false" onAction="#LogIn" prefHeight="36.0" prefWidth="130.0" styleClass="login_button" stylesheets="@style.css" text="Login">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+            </Button>
+            <Text layoutX="653.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+               <font>
+                  <Font name="Agency FB Bold" size="43.0" />
+               </font>
+            </Text>
+            <Text fill="#4d4d4d" layoutX="509.0" layoutY="651.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department of Electrical &amp; Computer Engineering">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="password" layoutX="589.0" layoutY="453.0" prefHeight="26.0" prefWidth="237.0" promptText="Password" styleClass="text_box" stylesheets="@style.css">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
          </children>
-      </HBox>
+      </AnchorPane>
    </center>
 </BorderPane>

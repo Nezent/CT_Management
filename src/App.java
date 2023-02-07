@@ -19,7 +19,9 @@ public class App extends Application {
             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             Image icon = new Image("ruet.png");
             primaryStage.getIcons().add(icon);
+            primaryStage.setTitle("Department of ECE");
             primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
             primaryStage.show();
         }
         catch(Exception e){

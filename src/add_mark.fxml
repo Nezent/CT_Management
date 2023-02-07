@@ -3,84 +3,125 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PrimaryController">
-   <children>
-      <VBox prefHeight="400.0" prefWidth="170.0">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PrimaryController">
+   <left>
+      <VBox fx:id="left_pane" prefHeight="558.0" prefWidth="159.0" styleClass="left_pane" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane fx:id="myMenuBar" prefHeight="410.0" prefWidth="170.0" style="-fx-background-color: #1a2a6c;">
+            <AnchorPane fx:id="myMenuBar" prefHeight="671.0" prefWidth="159.0">
                <children>
-                  <ImageView fx:id="myImage" fitHeight="79.0" fitWidth="65.0" layoutX="64.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="115.0" fitWidth="96.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@ruet.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="-1.0" layoutY="120.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="42.0" prefWidth="202.0" style="-fx-background-color: #396afc;" text="Home" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Text fill="WHITE" fontSmoothingType="LCD" layoutX="36.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
                      <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Agency FB Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="24.0" layoutY="210.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="38.0" prefWidth="110.0" styleClass="left_button" stylesheets="@style.css" text="Home" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="-1.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToAddMark" prefHeight="42.0" prefWidth="202.0" style="-fx-background-color: #396afc;" text="Add Marks" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Button layoutX="24.0" layoutY="272.0" mnemonicParsing="false" onAction="#switchToAddMark" prefHeight="39.0" prefWidth="110.0" styleClass="left_button" stylesheets="@style.css" text="Add Marks" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Agency FB Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="-1.0" layoutY="221.0" mnemonicParsing="false" onAction="#switchToResult" prefHeight="42.0" prefWidth="202.0" style="-fx-background-color: #396afc;" text="Result" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Button layoutX="24.0" layoutY="328.0" mnemonicParsing="false" onAction="#switchToResult" prefHeight="38.0" prefWidth="110.0" styleClass="left_button" stylesheets="@style.css" text="Result" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Agency FB Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="logout" layoutY="381.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: #396afc;" text="Log Out" textFill="WHITE">
+                  <Text fill="#b1b1b1" fontSmoothingType="LCD" layoutX="38.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version: 3.0.1">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Agency FB Bold" size="18.0" />
                      </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children></VBox>
+   </left>
+   <top>
+      <Pane fx:id="top_pane" prefHeight="41.0" prefWidth="600.0" styleClass="top_pane" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="900.0">
+               <children>
+                  <Button fx:id="logout" layoutX="838.0" mnemonicParsing="false" onAction="#switchToLogIn" prefHeight="41.0" prefWidth="43.0" styleClass="logout_button" stylesheets="@style.css">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
+                  <Text fill="WHITE" fontSmoothingType="LCD" layoutX="22.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rajshahi University of Engineering &amp; Technology, Rajshahi" AnchorPane.leftAnchor="22.0">
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children></Pane>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="main_pane" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane prefHeight="83.0" prefWidth="741.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Marks">
+                     <font>
+                        <Font name="Agency FB Bold" size="45.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <AnchorPane prefHeight="493.0" prefWidth="741.0">
+               <children>
+                  <Pane layoutX="79.0" layoutY="51.0" prefHeight="322.0" prefWidth="586.0" styleClass="mark_pane" stylesheets="@style.css">
+                     <children>
+                        <Text layoutX="67.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CT Type">
+                           <font>
+                              <Font name="Calisto MT Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="67.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Roll">
+                           <font>
+                              <Font name="Calisto MT Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="67.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marks">
+                           <font>
+                              <Font name="Calisto MT Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="add" layoutX="394.0" layoutY="253.0" mnemonicParsing="false" onAction="#Submit" prefHeight="36.0" prefWidth="110.0" styleClass="submit_button" stylesheets="@style.css" text="Add">
+                           <font>
+                              <Font name="Agency FB Bold" size="20.0" />
+                           </font></Button>
+                        <TextField fx:id="marks" layoutX="204.0" layoutY="186.0" prefHeight="30.0" prefWidth="300.0" promptText="Add Marks" styleClass="text_box" stylesheets="@style.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <ComboBox fx:id="ct_type" layoutX="204.0" layoutY="43.0" prefHeight="30.0" prefWidth="300.0" promptText="Select CT Type" styleClass="choose_box" stylesheets="@style.css" />
+                        <ComboBox fx:id="select_roll" layoutX="204.0" layoutY="113.0" prefHeight="30.0" prefWidth="300.0" promptText="Select Roll" styleClass="choose_box" stylesheets="@style.css" />
+                     </children>
+                  </Pane>
                </children>
             </AnchorPane>
          </children>
       </VBox>
-      <AnchorPane prefHeight="400.0" prefWidth="402.0" style="-fx-background-color: #D3CCE3; -fx-border-style: solid; -fx-border-color: black; -fx-border-radius: 5 5 5 5;">
-         <children>
-            <Text fontSmoothingType="LCD" layoutX="94.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Student Marks" textAlignment="CENTER">
-               <font>
-                  <Font name="Bodoni MT Bold" size="27.0" />
-               </font>
-            </Text>
-            <Text layoutX="60.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select CT">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </Text>
-            <Text layoutX="60.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Roll">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </Text>
-            <Text layoutX="60.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marks">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </Text>
-            <TextField fx:id="marks" layoutX="155.0" layoutY="199.0" style="-fx-background-color: #dbdbdb; -fx-border-style: solid; -fx-background-radius: black;">
-               <effect>
-                  <Blend />
-               </effect>
-            </TextField>
-            <Button fx:id="add" layoutX="231.0" layoutY="261.0" mnemonicParsing="false" onAction="#Submit" style="-fx-background-color: #0082c8;" text="Submit" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font></Button>
-            <ComboBox fx:id="select_roll" layoutX="156.0" layoutY="163.0" prefWidth="150.0" />
-            <ComboBox fx:id="ct_type" layoutX="156.0" layoutY="122.0" prefWidth="150.0" />
-         </children>
-      </AnchorPane>
-   </children>
-</HBox>
+   </center>
+</BorderPane>

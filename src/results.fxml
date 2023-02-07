@@ -6,74 +6,111 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PrimaryController">
-   <children>
-      <VBox prefHeight="400.0" prefWidth="170.0">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PrimaryController">
+   <left>
+      <VBox fx:id="left_pane" prefHeight="558.0" prefWidth="159.0" styleClass="left_pane" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane fx:id="myMenuBar" prefHeight="410.0" prefWidth="170.0" style="-fx-background-color: #1a2a6c;">
+            <AnchorPane fx:id="myMenuBar" prefHeight="671.0" prefWidth="159.0">
                <children>
-                  <ImageView fx:id="myImage" fitHeight="79.0" fitWidth="65.0" layoutX="64.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="115.0" fitWidth="96.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@ruet.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="-1.0" layoutY="120.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="42.0" prefWidth="202.0" style="-fx-background-color: #396afc;" text="Home" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Text fill="WHITE" fontSmoothingType="LCD" layoutX="36.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
                      <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Agency FB Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="24.0" layoutY="210.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="38.0" prefWidth="110.0" styleClass="left_button" stylesheets="@style.css" text="Home" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="-1.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchToAddMark" prefHeight="42.0" prefWidth="202.0" style="-fx-background-color: #396afc;" text="Add Marks" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Button layoutX="24.0" layoutY="272.0" mnemonicParsing="false" onAction="#switchToAddMark" prefHeight="39.0" prefWidth="110.0" styleClass="left_button" stylesheets="@style.css" text="Add Marks" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Agency FB Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="-1.0" layoutY="221.0" mnemonicParsing="false" onAction="#switchToResult" prefHeight="42.0" prefWidth="202.0" style="-fx-background-color: #396afc;" text="Result" textAlignment="CENTER" textFill="#fcfcfc">
+                  <Button layoutX="24.0" layoutY="328.0" mnemonicParsing="false" onAction="#switchToResult" prefHeight="38.0" prefWidth="110.0" styleClass="left_button" stylesheets="@style.css" text="Result" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font name="Agency FB Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="logout" layoutY="381.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="26.0" prefWidth="202.0" style="-fx-background-color: #396afc;" text="Log Out" textFill="WHITE">
+                  <Text fill="#b1b1b1" fontSmoothingType="LCD" layoutX="38.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version: 3.0.1">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Agency FB Bold" size="18.0" />
                      </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children></VBox>
+   </left>
+   <top>
+      <Pane fx:id="top_pane" prefHeight="41.0" prefWidth="600.0" styleClass="top_pane" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="900.0">
+               <children>
+                  <Button fx:id="logout" layoutX="838.0" mnemonicParsing="false" onAction="#switchToLogIn" prefHeight="41.0" prefWidth="43.0" styleClass="logout_button" stylesheets="@style.css">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
+                  <Text fill="WHITE" fontSmoothingType="LCD" layoutX="22.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rajshahi University of Engineering &amp; Technology, Rajshahi" AnchorPane.leftAnchor="22.0">
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children></Pane>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="main_pane" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane prefHeight="83.0" prefWidth="741.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Marks">
+                     <font>
+                        <Font name="Agency FB Bold" size="45.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <AnchorPane prefHeight="493.0" prefWidth="741.0">
+               <children>
+                  <TableView fx:id="table" layoutX="35.0" layoutY="21.0" prefHeight="347.0" prefWidth="670.0">
+                    <columns>
+                      <TableColumn fx:id="rollz" prefWidth="115" text="Roll" />
+                      <TableColumn fx:id="ct1" prefWidth="111" text="CT_1" />
+                        <TableColumn fx:id="ct2" prefWidth="111" text="CT_2" />
+                        <TableColumn fx:id="ct3" prefWidth="111" text="CT_3" />
+                        <TableColumn fx:id="ct4" prefWidth="111" text="CT_4" />
+                        <TableColumn fx:id="average" prefWidth="111" text="Average" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="export" layoutX="35.0" layoutY="398.0" mnemonicParsing="false" onAction="#Export" prefHeight="32.0" prefWidth="90.0" styleClass="export_button" stylesheets="@style.css" text="Export">
+                     <font>
+                        <Font name="Agency FB Bold" size="18.0" />
+                     </font></Button>
+                  <Button fx:id="load" layoutX="614.0" layoutY="398.0" mnemonicParsing="false" onAction="#Load" prefHeight="32.0" prefWidth="90.0" styleClass="load_button" stylesheets="@style.css" text="Load">
+                     <font>
+                        <Font name="Agency FB Bold" size="18.0" />
+                     </font></Button>
                </children>
             </AnchorPane>
          </children>
       </VBox>
-      <AnchorPane prefHeight="400.0" prefWidth="402.0" style="-fx-background-color: #D3CCE3;">
-         <children>
-            <Text fontSmoothingType="LCD" layoutX="80.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result Table" textAlignment="CENTER" wrappingWidth="241.76205444335938">
-               <font>
-                  <Font name="Californian FB Bold" size="30.0" />
-               </font>
-            </Text>
-            <Button fx:id="load" layoutX="334.0" layoutY="344.0" mnemonicParsing="false" onAction="#Load" style="-fx-background-color: #0082c8;" text="Load" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="16.0" />
-               </font>
-            </Button>
-            <TableView fx:id="table" layoutX="5.0" layoutY="65.0" prefHeight="271.0" prefWidth="387.0" style="-fx-background-color: transparent; -fx-border-color: black;">
-              <columns>
-                <TableColumn fx:id="rollz" prefWidth="80" text="Roll" />
-                <TableColumn fx:id="ct1" prefWidth="59" text="CT_1" />
-                  <TableColumn fx:id="ct2" prefWidth="59" text="CT_2" />
-                  <TableColumn fx:id="ct3" prefWidth="59" text="CT_3" />
-                  <TableColumn fx:id="ct4" prefWidth="59" text="CT_4" />
-                  <TableColumn fx:id="average" prefWidth="70" text="Average" />
-              </columns>
-            </TableView>
-            <Button fx:id="export" layoutX="14.0" layoutY="343.0" mnemonicParsing="false" onAction="#Export" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #96c93d;" text="Export" textAlignment="CENTER">
-               <font>
-                  <Font name="Calibri Bold" size="16.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-   </children>
-</HBox>
+   </center>
+</BorderPane>
