@@ -164,6 +164,11 @@
                         </Text>
                      </children>
                   </Pane>
+                  <Text layoutX="218.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Info : 2nd Year Odd Semester">
+                     <font>
+                        <Font name="Agency FB Bold" size="24.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
          </children>

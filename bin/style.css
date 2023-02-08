@@ -117,3 +117,15 @@
     -fx-border-radius: 0 0 10 10;
     -fx-border-color: #000000;
 }
+.alert{
+    -fx-background-radius: 12;
+    -fx-background-color: #76FF03;
+    -fx-border-radius: 12;
+    -fx-border-color: black;
+}
+.update{
+    -fx-background-radius: 12;
+    -fx-background-color: #78909C;
+    -fx-border-radius: 12;
+    -fx-border-color: black;    
+}

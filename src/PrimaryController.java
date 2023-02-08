@@ -18,12 +18,16 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
+import javafx.animation.Interpolator;
+import javafx.animation.PauseTransition;
+import javafx.animation.ScaleTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -36,8 +40,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
 public class PrimaryController implements Initializable{
     DB db = new DB();
@@ -142,10 +149,62 @@ public class PrimaryController implements Initializable{
         if(status == 1){
             System.out.println("Done");
             marks.setText("");
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("success.fxml"));
+                Parent root = loader.load();
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.initStyle(StageStyle.TRANSPARENT);
+                scene.setFill(Color.TRANSPARENT);
+                ScaleTransition st = new ScaleTransition(Duration.millis(100));
+                st.setInterpolator(Interpolator.EASE_BOTH);
+                stage.initStyle(StageStyle.UNDECORATED);
+                st.setFromX(0);
+                st.setFromY(0);
+                st.setToX(1);
+                st.setToY(1);
+                stage.setScene(scene);
+                stage.show();
+                stage.setX(835);
+                stage.setY(590);
+                PauseTransition delay = new PauseTransition(Duration.seconds(2));
+                delay.setOnFinished(events -> stage.close());
+                delay.play();
+            }
+            catch(IOException e){
+                System.out.println(e);
+            }
         }
         else{
             System.out.println("Updated Marks");
             marks.setText("");
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("update.fxml"));
+                Parent root = loader.load();
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.initStyle(StageStyle.TRANSPARENT);
+                scene.setFill(Color.TRANSPARENT);
+                ScaleTransition st = new ScaleTransition(Duration.millis(100));
+                st.setInterpolator(Interpolator.EASE_BOTH);
+                stage.initStyle(StageStyle.UNDECORATED);
+                st.setFromX(0);
+                st.setFromY(0);
+                st.setToX(1);
+                st.setToY(1);
+                stage.setScene(scene);
+                stage.show();
+                stage.setX(835);
+                stage.setY(590);
+                PauseTransition delay = new PauseTransition(Duration.seconds(2));
+                delay.setOnFinished(events -> stage.close());
+                delay.play();
+            }
+            catch(IOException e){
+                System.out.println(e);
+            }
         }
     }
     @FXML
