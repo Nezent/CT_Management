@@ -33,30 +33,36 @@
     -fx-background-radius: 12;
     -fx-border-radius: 12;
     -fx-border-color: black;
+    -fx-text-fill: #000000;
 }
 .submit_button:hover{
     -fx-background-color:#0278bd3a;
     -fx-background-radius: 12;
+    -fx-text-fill: #000000;
 }
 .load_button{
     -fx-background-color: #00B0FF;
     -fx-background-radius: 12;
     -fx-border-radius: 12;
     -fx-border-color: black;
+    -fx-text-fill: #000000;
 }
 .export_button{
     -fx-background-color: #76FF03;
     -fx-background-radius: 12;
     -fx-border-radius: 12;
     -fx-border-color: black;
+    -fx-text-fill: #000000;
 }
 .load_button:hover{
     -fx-background-color: #e1f5fe;
-    -fx-background-radius: 12;  
+    -fx-background-radius: 12; 
+    -fx-text-fill: #000000; 
 }
 .export_button:hover{
     -fx-background-color: #e8f5e9;
     -fx-background-radius: 12;
+    -fx-text-fill: #000000;
 }
 .inside_pane_1{
     -fx-background-color: #0091EA;
@@ -106,11 +112,13 @@
     -fx-background-color: #00BFA5;
     -fx-background-radius:12;
     -fx-border-radius:12;
+    -fx-text-fill: #000000;
 }
 .login_button:hover{
     -fx-background-color: #536DFE;
     -fx-background-radius:12;
     -fx-border-radius:12;
+    -fx-text-fill: #FFFFFF;
 }
 .table{
     -fx-background-radius: 0 0 10 10;
