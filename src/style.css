@@ -7,7 +7,10 @@
 .logout_button{
     -fx-background-color: transparent;
     -fx-background-radius: 30;
-
+}
+.logout_button:hover{
+    -fx-background-color: #e3eae31d;
+    -fx-background-radius:30;
 }
 .left_button{
     -fx-background-color: transparent;
@@ -16,7 +19,7 @@
     -fx-border-color: #00E676;
 }
 .left_button:hover{
-    -fx-background-color: #e8f5e949;
+    -fx-background-color: #e3eae31d;
     -fx-background-radius:20;
 }
 .main_pane{
