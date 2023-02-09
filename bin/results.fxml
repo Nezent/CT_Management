@@ -90,14 +90,14 @@
             </StackPane>
             <AnchorPane prefHeight="493.0" prefWidth="741.0">
                <children>
-                  <TableView fx:id="table" layoutX="35.0" layoutY="21.0" prefHeight="347.0" prefWidth="675.0" styleClass="table" stylesheets="@style.css">
+                  <TableView fx:id="table" layoutX="35.0" layoutY="21.0" prefHeight="347.0" prefWidth="674.0" styleClass="table" stylesheets="@style.css">
                     <columns>
-                      <TableColumn fx:id="rollz" prefWidth="115" text="Roll" />
-                      <TableColumn fx:id="ct1" prefWidth="111" text="CT_1" />
-                        <TableColumn fx:id="ct2" prefWidth="111" text="CT_2" />
-                        <TableColumn fx:id="ct3" prefWidth="111" text="CT_3" />
-                        <TableColumn fx:id="ct4" prefWidth="111" text="CT_4" />
-                        <TableColumn fx:id="average" prefWidth="111" text="Average" />
+                      <TableColumn fx:id="rollz" prefWidth="112" text="Roll" />
+                      <TableColumn fx:id="ct1" prefWidth="108" text="CT_1" />
+                        <TableColumn fx:id="ct2" prefWidth="108" text="CT_2" />
+                        <TableColumn fx:id="ct3" prefWidth="108" text="CT_3" />
+                        <TableColumn fx:id="ct4" prefWidth="108" text="CT_4" />
+                        <TableColumn fx:id="average" prefWidth="110" text="Average" />
                     </columns>
                   </TableView>
                   <Button fx:id="export" layoutX="35.0" layoutY="398.0" mnemonicParsing="false" onAction="#Export" prefHeight="32.0" prefWidth="90.0" styleClass="export_button" stylesheets="@style.css" text="Export">
