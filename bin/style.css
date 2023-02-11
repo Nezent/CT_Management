@@ -143,3 +143,9 @@
     -fx-border-radius: 12;
     -fx-border-color: black;    
 }
+.error{
+    -fx-background-radius: 12;
+    -fx-background-color: #F44336;
+    -fx-border-radius: 12;
+    -fx-border-color: black;    
+}

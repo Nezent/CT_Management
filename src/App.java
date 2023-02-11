@@ -13,19 +13,14 @@ public class App extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        try{
-            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-            Image icon = new Image("ruet.png");
-            primaryStage.getIcons().add(icon);
-            primaryStage.setTitle("Department of ECE");
-            primaryStage.setScene(scene);
-            primaryStage.setResizable(false);
-            primaryStage.show();
-        }
-        catch(Exception e){
-            System.out.println(e);
-        }
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        Image icon = new Image("ruet.png");
+        primaryStage.getIcons().add(icon);
+        primaryStage.setTitle("Department of ECE");
+        primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
+        primaryStage.show();
     }
 }

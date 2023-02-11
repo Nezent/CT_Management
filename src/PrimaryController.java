@@ -105,6 +105,7 @@ public class PrimaryController implements Initializable{
         String ct = ct_type.getValue();
         Integer roll;
         Integer mark;
+        int status = 0;
         if(marks.getText().equals("a") || marks.getText().equals("A")){
             mark = -1;
         }
@@ -122,30 +123,53 @@ public class PrimaryController implements Initializable{
         // pst.setInt(2, ct);
         // pst.setInt(3, mark);
         if(ct == "CT_1"){
-            pst = db.conn.prepareStatement("INSERT INTO `result`(`Roll`,`CT_1`)VALUES(?,?)ON DUPLICATE KEY UPDATE `CT_1` = ?");
-            pst.setInt(1, roll);
-            pst.setInt(2, mark);
-            pst.setInt(3, mark);
+            if(mark > 20 || mark < -1){
+                status = -2;
+            }
+            else{
+                pst = db.conn.prepareStatement("INSERT INTO `result`(`Roll`,`CT_1`)VALUES(?,?)ON DUPLICATE KEY UPDATE `CT_1` = ?");
+                pst.setInt(1, roll);
+                pst.setInt(2, mark);
+                pst.setInt(3, mark);
+                status = pst.executeUpdate();
+            }
         }
-        else if(ct == "CT_2"){            
-            pst = db.conn.prepareStatement("INSERT INTO `result`(`Roll`,`CT_2`)VALUES(?,?)ON DUPLICATE KEY UPDATE `CT_2` = ?");
-            pst.setInt(1, roll);
-            pst.setInt(2, mark);
-            pst.setInt(3, mark);       
+        else if(ct == "CT_2"){   
+            if(mark > 20 || mark < -1){
+                status = -2;
+            }         
+            else{
+                pst = db.conn.prepareStatement("INSERT INTO `result`(`Roll`,`CT_2`)VALUES(?,?)ON DUPLICATE KEY UPDATE `CT_2` = ?");
+                pst.setInt(1, roll);
+                pst.setInt(2, mark);
+                pst.setInt(3, mark);   
+                status = pst.executeUpdate();   
+            }
         }
         else if(ct == "CT_3"){
-            pst = db.conn.prepareStatement("INSERT INTO `result`(`Roll`,`CT_3`)VALUES(?,?)ON DUPLICATE KEY UPDATE `CT_3` = ?");
-            pst.setInt(1, roll);
-            pst.setInt(2, mark);
-            pst.setInt(3, mark);     
+            if(mark > 20 || mark < -1){
+                status = -2;
+            }
+            else{
+                pst = db.conn.prepareStatement("INSERT INTO `result`(`Roll`,`CT_3`)VALUES(?,?)ON DUPLICATE KEY UPDATE `CT_3` = ?");
+                pst.setInt(1, roll);
+                pst.setInt(2, mark);
+                pst.setInt(3, mark); 
+                status = pst.executeUpdate(); 
+            }
         }
         else{
-            pst = db.conn.prepareStatement("INSERT INTO `result`(`Roll`,`CT_4`)VALUES(?,?)ON DUPLICATE KEY UPDATE `CT_4` = ?");
-            pst.setInt(1, roll);
-            pst.setInt(2, mark);
-            pst.setInt(3, mark);        
+            if(mark > 20 || mark < -1){
+                status = -2;
+            }
+            else{
+                pst = db.conn.prepareStatement("INSERT INTO `result`(`Roll`,`CT_4`)VALUES(?,?)ON DUPLICATE KEY UPDATE `CT_4` = ?");
+                pst.setInt(1, roll);
+                pst.setInt(2, mark);
+                pst.setInt(3, mark);   
+                status = pst.executeUpdate();   
+            }
         }
-        int status = pst.executeUpdate();
         if(status == 1){
             System.out.println("Done");
             marks.setText("");
@@ -167,6 +191,35 @@ public class PrimaryController implements Initializable{
                 stage.setScene(scene);
                 stage.show();
                 stage.setX(835);
+                stage.setY(590);
+                PauseTransition delay = new PauseTransition(Duration.seconds(2));
+                delay.setOnFinished(events -> stage.close());
+                delay.play();
+            }
+            catch(IOException e){
+                System.out.println(e);
+            }
+        }
+        else if(status == -2){
+            marks.setText("");
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("error.fxml"));
+                Parent root = loader.load();
+                Stage stage = new Stage();
+                Scene scene = new Scene(root);
+                stage.initStyle(StageStyle.TRANSPARENT);
+                scene.setFill(Color.TRANSPARENT);
+                ScaleTransition st = new ScaleTransition(Duration.millis(100));
+                st.setInterpolator(Interpolator.EASE_BOTH);
+                stage.initStyle(StageStyle.UNDECORATED);
+                st.setFromX(0);
+                st.setFromY(0);
+                st.setToX(1);
+                st.setToY(1);
+                stage.setScene(scene);
+                stage.show();
+                stage.setX(880);
                 stage.setY(590);
                 PauseTransition delay = new PauseTransition(Duration.seconds(2));
                 delay.setOnFinished(events -> stage.close());
