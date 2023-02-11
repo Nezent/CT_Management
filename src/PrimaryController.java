@@ -297,9 +297,13 @@ public class PrimaryController implements Initializable{
         Document document = new Document();
         PdfWriter.getInstance(document, new FileOutputStream(path));
         document.open();
+        Paragraph ruet = new Paragraph("Rajshahi University of Engineering & Technology, Rajshahi", FontFactory.getFont(FontFactory.HELVETICA, 15, Font.BOLD));
         Paragraph heading = new Paragraph("Department of ECE,RUET");
         heading.setAlignment(Element.ALIGN_CENTER);
         heading.setSpacingAfter(30f);
+        ruet.setAlignment(Element.ALIGN_CENTER);
+        ruet.setSpacingAfter(20f);
+        document.add(ruet);
         document.add(heading);
         PdfPTable table = new PdfPTable(6);
         table.getDefaultCell().setPadding(4);
